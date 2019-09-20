@@ -1,0 +1,27 @@
+{
+  "name": "myredux",
+  "version": "1.0.0",
+  "description": "a simple redux project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack && node ./dist/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jinyingmo/myRedux.git"
+  },
+  "author": "jinyingmo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jinyingmo/myRedux/issues"
+  },
+  "homepage": "https://github.com/jinyingmo/myRedux#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9"
+  }
+}

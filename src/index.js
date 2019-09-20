@@ -1,4 +1,4 @@
-/*增加一个参数 plan*/
+import { combineReducers } from './combineReducers'
 
 const createStore = function(reducer, initState) {
   let state = initState
@@ -19,33 +19,43 @@ const createStore = function(reducer, initState) {
   return { subscribe, dispatch, getState }
 }
 
-function reducer(state, action) {
+function countReducer(state, action) {
   switch (action.type) {
     case 'PLUS':
       return {
         ...state,
-        count: state.count + 1
+        num: state.num + 1
       }
     case 'MINUS':
       return {
         ...state,
-        count: state.count - 1
+        num: state.num - 1
       }
     default:
       return state
   }
 }
 
+const reducer = combineReducers({
+  count: countReducer
+})
+
 let initState = {
-  count: 0
+  count: {
+    num: 0
+  }
 }
 
 let store = createStore(reducer, initState)
 store.subscribe(() => {
   let state = store.getState()
-  console.log(state.count)
+  console.log(state)
 })
 
-store.changeState({
+store.dispatch({
   type: 'PLUS'
+})
+
+store.dispatch({
+  type: 'MINUS'
 })
