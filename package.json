@@ -4,8 +4,8 @@
   "description": "a simple redux project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack && node ./dist/bundle.js"
+    "build": "webpack",
+    "test": "webpack && node ./dist/test.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,8 @@
     "@babel/core": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
     "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.9"
   }
