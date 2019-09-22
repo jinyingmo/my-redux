@@ -32,7 +32,7 @@ const reducer = combineReducers({
 const middlewares = applyMiddleware(prevLogger, nextLogger)
 
 let store = createStore(reducer, {}, middlewares)
-store.subscribe(() => {
+const unsubscribe = store.subscribe(() => {
   let state = store.getState()
   console.log(state)
 })
@@ -40,6 +40,8 @@ store.subscribe(() => {
 store.dispatch({
   type: 'PLUS'
 })
+
+unsubscribe()
 
 store.dispatch({
   type: 'MINUS'
