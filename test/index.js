@@ -1,4 +1,8 @@
 import { combineReducers, createStore } from '../src/index'
+import { applyMiddleware } from '../src/applyMiddleware'
+
+import { prevLogger } from '../middlewares/prevLogger'
+import { nextLogger } from '../middlewares/nextLogger'
 
 let initState = {
   num: 0
@@ -25,7 +29,9 @@ const reducer = combineReducers({
   count: countReducer
 })
 
-let store = createStore(reducer)
+const middlewares = applyMiddleware(prevLogger, nextLogger)
+
+let store = createStore(reducer, {}, middlewares)
 store.subscribe(() => {
   let state = store.getState()
   console.log(state)
