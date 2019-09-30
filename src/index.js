@@ -2,7 +2,7 @@ import { combineReducers } from './combineReducers'
 
 const createStore = function(reducer, initState, rewriteCreateStoreFunc) {
   //可以省略不传initState，则第二个参数为rewriteCreateStoreFunc
-  if (initState && typeof initState === 'funcgion') {
+  if (initState && typeof initState === 'function') {
     rewriteCreateStoreFunc = initState
     initState = {}
   }
